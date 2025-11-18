@@ -1,0 +1,39 @@
+/* dashboard.css */
+
+/* Untuk dashboard wrapper, jika ada panel samping (future) */
+.dashboard-wrapper {
+  transition: padding-left 0.3s ease;
+}
+
+.layout-container.collapsed .dashboard-wrapper {
+  padding-left: 80px;
+}
+
+/* Summary Panel */
+.fixed-summary {
+  position: fixed;
+  top: 60px;
+  left: 240px;
+  right: 0;
+  z-index: 100;
+  background: #2f3542;
+  padding: 1rem 1.5rem 1rem 2.5rem;
+  transition: left 0.3s ease;
+}
+
+.layout-container.collapsed .fixed-summary {
+  left: 70px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fixed-summary {
+    left: 1rem;
+    right: 1rem;
+    top: 3.5rem;
+  }
+}
+
+.sensor-dashboard-section {
+  margin-top: 150px; /* Sesuaikan tergantung tinggi komponen Welcome */
+}

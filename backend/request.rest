@@ -1,0 +1,86 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "username": "administrator",
+  "password": "password",
+  "role": "administrator",
+  "access": {
+    "businessUnit": "",
+    "subUnit": "",
+    "branch": ""
+  }
+}
+
+###
+POST http://localhost:5000/users/create
+Content-Type: application/json
+
+{
+  "username": "administrator",
+  "password": "password",
+  "role": "administrator",
+  "access": {
+    "businessUnit": " ",
+    "subUnit": " ",
+    "branch": " "
+  }
+}
+### Login admin branch
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "administrator",
+  "password": "password"
+}
+
+### log Out
+DELETE http://localhost:5000/logout
+Content-Type: application/json
+
+### Get me
+GET http://localhost:5000/me
+Content-Type: application/json
+
+### Get Users
+GET http://localhost:5000/users
+Content-Type: application/json
+
+### deleted user
+DELETE http://localhost:5000/users/5
+
+
+
+
+
+
+### Create sensor
+POST http://localhost:5000/sensors
+Content-Type: application/json
+
+{
+  "type": "temperature",
+  "value": 30.5,
+  "location": "Ruangan A1",
+  "businessUnit": "BU-01",
+  "subUnit": "SU-02",
+  "branch": "BR-03",
+  "sensorCode": "TEMP-001",
+  "sensorName": "Sensor AC A1"
+}
+
+
+###
+POST http://localhost:5000/ingest
+Content-Type: application/json
+
+{
+  "branchId": "CIBITUNG",
+  "type": "temperature",
+  "location": "Lab A",
+  "value": 90.5
+}
+
+###
+GET http://localhost:5000/sensors/6/logs 

@@ -1,0 +1,64 @@
+.layout-container {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.layout-container.expanded .main-content {
+  margin-left: 240px;
+}
+
+.layout-container.collapsed .main-content {
+  margin-left: 70px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 1rem;
+  transition: margin-left 0.3s ease;
+}
+
+/* Tombol toggle sidebar */
+/* Posisi default ketika sidebar expanded */
+.sidebar-toggle-button {
+  position: fixed;
+  top: 60px;
+  left: 240px;
+  z-index: 1000;
+  background-color: #2f3542;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: left 0.3s ease;
+}
+
+.layout-container.collapsed .sidebar-toggle-button {
+  left: 70px;
+}
+
+/* Responsive */
+/* Tambahkan ini untuk posisi yang lebih presisi di layar kecil */
+@media (max-width: 768px) {
+  .sidebar-toggle-button {
+    left: 70px; /* default untuk mobile */
+  }
+
+  .layout-container.expanded .sidebar-toggle-button {
+    left: 200px; /* jika sidebar responsive ukurannya */
+  }
+
+  .layout-container.collapsed .sidebar-toggle-button {
+    left: 70px;
+  }
+}
+
+[data-theme="dark"] .theme-box {
+  background-color: #242424;
+  color: #ffffff;
+}
+[data-theme="light"] .theme-box {
+  background-color: #f7f7f7;
+  color: #323333;
+}
+

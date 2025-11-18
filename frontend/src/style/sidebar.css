@@ -1,0 +1,113 @@
+/* sidebar.css */
+
+.sidebar {
+  position: fixed;
+  top: 52px;
+  left: 0;
+  width: 240px;
+  height: 100%;
+  background-color: #2f3542;
+  padding: 1rem;
+  transition: width 0.3s ease, padding 0.3s ease;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.layout-container.collapsed .sidebar {
+  width: 70px;
+  padding: 1rem 0.5rem;
+}
+
+.sidebar.collapsed .menu-label,
+.sidebar.collapsed .menu-list a span,
+.sidebar.collapsed .menu-list button span,
+.sidebar.collapsed .menu-button span {
+  display: none;
+}
+
+/* Menu */
+.menu-label {
+  color: #a4b0be;
+  font-size: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+
+.menu-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-list li {
+  margin-bottom: 0.6rem;
+}
+
+.menu-list a,
+.menu-list button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.6rem 0.8rem;
+  color: #f1f2f6;
+  text-decoration: none;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: 100%;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-list a:hover,
+.menu-list a.active,
+.menu-list button:hover {
+  background-color: #57606f;
+  color: white;
+}
+
+/* Icon style */
+.menu-list svg {
+  font-size: 1.2rem;
+}
+
+/* Scrollbar */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #747d8c;
+  border-radius: 3px;
+}
+
+/* Tambahan untuk menu tombol berbasis <div> */
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.6rem 0.8rem;
+  color: #f1f2f6;
+  background-color: transparent; /* Tambahkan baris ini */
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.menu-button:hover {
+  background-color: #57606f;
+  color: white;
+}
+
+.menu-button.is-active {
+  background-color: #747d8c;
+  color: white;
+}
+
+.menu-button svg {
+  font-size: 1.2rem;
+}
+
+
